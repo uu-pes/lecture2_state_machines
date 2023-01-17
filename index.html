@@ -35,238 +35,244 @@
 	<h3>Outline</h3>
 
 	<ul class="box-list">
-		<li><i class="ti ti-affiliate"></i>Organization</li>
-		<li><i class="ti ti-cpu"></i>Hardware + SDK</li>
-		<li><i class="ti ti-schema"></i>State machines</li>
+		<li><i class="ti ti-wrecking-ball"></i>Bare-metal vs RTOS</li>
+		<li><i class="ti ti-traffic-lights"></i>State machines</li>
+		<li><i class="ti ti-flask"></i>Lab 1</li>
 	</ul>
 </section>
 
 <section>
-	<h3>Teachers</h3>
-	<div class="third-part">
-		<img class="photo" src="images/Nick.jpeg">
-		<p class="name">Nick</p>
+	<div class="half-part">
+		<h5>Bare Metal</h5>
+		<ul>
+			<li class="fragment fade-up">Simple applications</li>
+			<li class="fragment fade-up">No specific timing requirements</li>
+			<li class="fragment fade-up">"Single loop applications"</li>
+			<li class="fragment fade-up">(Purely) interrupt-based systems</li>
+		</ul>
 	</div>
-	<div class="third-part">
-		<img class="photo" src="images/Tobias.jpg">
-		<p class="name">Tobias</p>
-	</div>
-	<div class="third-part">
-		<img class="photo" src="images/Mikolai.jpg">
-		<p class="name">Mikolai</p>
-	</div>
-</section>
-
-<section>
-	<h3>Course structure</h3>
-	<div class="fragment fade-up box">
-		Part 1: 1DT106, Period 3<br>
-		12 lectures, 4 labs 
-	</div>
-	<div class="fragment fade-up box">
-		Exam: March 15th, 2023
-	</div>
-	<div class="fragment fade-up box">
-		Part 2: 1DT108, Period 4<br>
-		(separate application required)
+	<div class="half-part">
+		<h5>RTOS</h5>
+		<ul>
+			<li class="fragment fade-up">Multiple, independent execution threads</li>
+			<li class="fragment fade-up">More elaborate data exchange between tasks</li>
+			<li class="fragment fade-up">Usually needs more memory though</li>
+		</ul>
 	</div>
 </section>
 
 <section data-background-color="white">
-	<img class="r-stretch" src="images/cat.jpeg">
+	<img class="r-stretch" src="images/making-embedded-systems.jpg">
 </section>
 
 <section>
-	<h3>Lab assignments</h3>
-	<ul>
-		<li>Labs are done <emph>individually</emph></li>
-		<li>Assessment:</li>
+	<section data-background-image="images/cogs.jpg" data-background-opacity="0.2">
+		<h1>State machines</h1>
+	</section>
+
+	<section>
 		<ul>
-			<li>Must show a <emph>working solution</emph> to one of the teachers</li>
-			<li>Code upload on Studium => <emph>plagiarism check</emph></li>
-		</ul>
-	</ul>
-</section>
-
-<section>
-	<h3>Lab topics</h3>
-	<ul class="box-list">
-		<li class="fragment fade-up"><i class="ti ti-schema"></i>State machines</li>
-		<li class="fragment fade-up"><i class="ti ti-cpu"></i>RTOS Basics</li>
-		<li class="fragment fade-up"><i class="ti ti-components"></i>Working with external hardware</li>
-		<li class="fragment fade-up"><i class="ti ti-zoom-check"></i>Verification with Frama-C</li>
-	</ul>
-</section>
-
-<section>
-	<h3>Lab kits</h3>
-	<ul>
-		<li>Distributed during first lab</li>
-		<li>Yours for the duration of the course</li>
-		<li>If something breaks => inform teacher/TAs</li>
-		<li class="fragment highlight-red">Property of Uppsala University</li>
-	</ul>
-</section>
-
-<section>
-	<h3>Course schedule</h3>
-	<ul>
-		<li>On TimeEdit (look for 1DT106)</li>
-		<li>On Studium (left menu)</li>
-		<li>For each lab => 2 sessions</li>
-		<ul>
-			<li>Marked as <emph>Lab X.1</emph> and <emph>Lab X.2</emph></li>
-			<li>You can work individually between the sessions</li>
-		</ul>
-	</ul>
-</section>
-
-<section>
-	<h3>Examination</h3>
-	<ul>
-		<li>March 15th, 2023, 08:00 - 13:00</li>
-		<li>On INSPERA</li>
-		<li>60 Points in total</li>
-		<ul>
-			<li>[30, 39] => 3</li>
-			<li>[40, 49] => 4</li>
-			<li>[50, 60] => 5</li>
-		</ul>
-	</ul>
-</section>
-
-<section>
-	<h1>Hardware</h1>
-</section>
-
-<section data-background-image="images/pico.jpg" data-background-opacity="1.0">
-</section>
-
-<section data-background-color="white">
-	<img src="images/raspberry-pi-pico-pinout.png">
-</section>
-
-<section>
-	<h3>Raspberry Pi Pico</h3>
-	<ul>
-		<li>Dual-core ARM Cortex-M0+</li>
-		<li>264kB on-chip SRAM</li>
-		<li>2MB on-board flash</li>
-		<li>2x UART, 2x SPI, 2x I2C, 16x PWM</li>
-		<li>Programmable I/O</li>
-		<li>USB-drive bootloader</li>
-	</ul>
-</section>
-
-<section data-background-color="white">
-	<img src="images/MakerPiPico-PinRef-Front-rev1.2-800-lres.png">
-</section>
-
-<section>
-	<h3>Lab software</h3>
-	<div class="row">
-		<div class="column">
-			<img width="200" src="images/570px-Raspberry_Pi_Logo.svg.png">
-		</div>
-		<div class="column">
-			<img width="300" src="images/Zephyr_RTOS_logo_2015.svg.png">
-		</div>
-		<div class="column">
-			<img width="300" src="images/Frama-C_logo,_full.png">
-		</div>
-	</div>
-</section>
-
-<section>
-	<h3>Pico SDK</h3>
-	<div class="fragment fade-up citation">
-		<div class="cite">The SDK [...] provides the headers, libraries and build system necessary to write programs 
-			for RP2040-based devices such as Raspberry Pi Pico in C, C++ or Arm assembly language.
-		</div>
-		<div class="source">
-			Raspberry Pi Pico C/C++ SDK
-		</div>
-	</div>
-	<ul>
-		<li class="fragment fade-up">SDK provided by Raspberry Pi Ltd.</li>
-		<li class="fragment fade-up">Consists of:</li>
-		<ul>
-			<li class="fragment fade-up">Higher-level libraries (pico_xxx)</li>
-			<li class="fragment fade-up">Runtime support (e.g. pico_standard_link)</li>
-			<li class="fragment fade-up">Hardware support libraries (hardware_xxx)</li>
-			<li class="fragment fade-up">Hardware struct/register libraries</li>
-		</ul>
-	</ul>
-</section>
-
-<section>
-	<h3>An example application</h3>
-	<div class="dirtree">
-		<ul class="dir-list">
-			<li class="folder">blinky
-					<ul>
-					<li>CMakeLists.txt</li>
-					<li>pico_sdk_import.cmake</li>
-					<li>main.c</li>
-				</ul>
+			<li class="fragment fade-up">Standard software design pattern</li>
+			<li class="fragment fade-up" style="list-style-type: none">
+				<div class="citation">
+					<div class="cite">[...] allow an object to alter its behaviour when its internal state changes. The object will appear to change its class.</div>
+					<div class="source">Design Patterns: Elements of Reusable Object-Oriented Software, Gamma et. al. 1994</div>
+				</div>
 			</li>
+			<li class="fragment fade-up">Can be used even in C (without OOP)</li>
+			<li class="fragment fade-up">Put simply: SM does different things depending on the current context (state)</li>
+			<li class="fragment fade-up">Often represented as <emph>flow charts</emph> (or Finite State Automata)</li>
 		</ul>
-	</div>
+	</section>
+
+	<section>
+		<h3>Designing state machines</h3>
+		<ul>
+			<li class="fragment fade-up">First, we must figure out the states of the system</li>
+			<li class="fragment fade-up">What are the state change triggers?</li>
+			<ul>
+				<li class="fragment fade-up">Synchronous / Asynchronous / Internal / External</li>
+			</ul>
+			<li class="fragment fade-up">What to do with triggers we are not expecting in a particular state?</li>
+			<ul>
+				<li class="fragment fade-up">Maybe we can just ignore them?</li>
+				<li class="fragment fade-up">Maybe we should generate an error?</li>
+			</ul>
+		</ul>
+	</section>
 </section>
 
 <section>
-	<h3>main.c</h3>
-	<pre class="C"><code data-trim data-noescape data-line-numbers="|1|3|5-13|6,7|10|11|">
-		#include "pico/stdlib.h"
+	<section data-background-image="images/circuit.jpg" data-background-opacity="0.2">
+		<h1>Example</h1>
+		<h3>Traffic lights</h3>
+	</section>
 
-		const static uint led_pin = 0; 
-
-		int main() {
-			gpio_init(led_pin); 
-			gpio_set_dir(led_pin, GPIO_OUT); 
-
-			for(;;){
-				gpio_xor_mask(1 << led_pin); 
-				sleep_ms(500); 
-			}
-		}
-	</code></pre>
+	<section>
+		<img class="r-stretch" src="images/traffic_lights_combined.png">
+	</section>
 </section>
 
 <section>
-	<h3>CMakeLists.txt</h3>
-	<pre class="cmake"><code data-trim data-noescape data-line-numbers="|1|3,4,6|8|10,11|">
-		cmake_minimum_required(VERSION 3.13)
+	<section>
+		<h1>State centric state machine</h1>
+	</section>
 
-		include(pico_sdk_import.cmake)
-		project(blinky) 
-		
-		pico_sdk_init() 
+	<section>
+		<h3>State centric state machine</h3>
+		<ul>
+			<li>Big if-else (or switch) statement</li>
+			<li>Each state needs to know about its sibling states</li>
+			<li>Easy to write</li>
+			<li>Difficult to maintain and update</li>
+			<ul>
+				<li>Introducing a new state -> Possibly need to put a new transition into every other state</li>
+			</ul>
+		</ul>
+	</section>
 
-		add_executable(blinky main.c)
+	<section>
+		<pre class="C"><code data-trim data-noescape data-line-numbers="|1|2|4|5-10|12-16|18-22">
+			white(1): 
+				get event 
 
-		pico_add_extra_outputs(blinky) 
-		target_link_libraries(blinky pico_stdlib)
-	</code></pre>
+				switch(state): 
+					case (green): 
+						if (event is stop): 
+							turn off green light 
+							turn on yellow light 
+							set state to yellow 
+							start timer 
+					
+					case (yellow): 
+						if (event is timeout): 
+							turn off yellow light 
+							turn on red light 
+							set state to red 
+					
+					case (red): 
+						if (event is go):
+							turn off red light 
+							turn on green light 
+							set state to green 
+		</code></pre>
+	</section>
+
+	<section data-background-image="images/code.jpg" data-background-opacity="0.2">
+		<h1>Implementation</h1>
+	</section>
+
+	<section>
+		<h3>Issues with simple implementation</h3>
+
+		<ul>
+			<li>State behaviour and state transitions are mixed</li>
+			<li>Get command function => no debouncing</li>
+			<li>Continuous computation, even if there is no update</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Hiding transition logic</h3>
+
+		<ul>
+			<li class="fragment fade-up">Each state needs to know how to switch to all other states</li>
+			<li class="fragment fade-up">Separate state transition information from state behaviour</li>
+			<li class="fragment fade-up">Better encapsulation, fewer dependencies</li>
+			<li class="fragment fade-up">Solution => next state function</li>
+		</ul>
+	</section>
+
+	<section data-auto-animate>
+		<img class="r-stretch" src="images/button_noise.png">
+	</section>
+
+	<section data-auto-animate>
+		<h3>Button presses</h3>
+
+		<div class="half-part">
+			<img src="images/button_noise.png">
+		</div>
+		<div class="half-part">
+			<ul>
+				<li class="fragment fade-up">Input signal at pin not clean</li>
+				<li class="fragment fade-up">Initial bounce between LOW and HIGH levels</li>
+				<li class="fragment fade-up">Solution => Debouncing</li>
+			</ul>	
+		</div>
+	</section>
+
+	<section>
+		<h3>Hardware debouncing</h3>
+		<div style="align-items: center">
+		<div class="half-part" style="height: 100%">
+			<h4>Schmitt trigger</h4>
+			<img src="images/Schmitttrigger_symbol.png">
+			<ul>
+				<li>2 thresholds</li>
+				<li>Input between levels => retain value</li>
+				<li>Multiple possible implementations</li>
+			</ul>
+		</div>
+		<div class="half-part">
+			<img src="images/schmitttriger_hysteresis.png">
+		</div>	
+	</div>	
+	</section>
+
+	<section>
+		<h3>Software debouncing</h3>
+		<div class="half-part">
+			<img class="r-stretch" src="images/button_state_machine.png">
+		</div>
+		<div class="half-part">
+			<ul>
+				<li>Need to <emph>sense</emph> each level <emph>twice</emph> for button to count as pressed / released</li>
+				<li>Delay between sensing input must be chosen correctly (~ ms)</li>
+			</ul>
+		</div>
+	</section>	
+
+	<section>
+		<h3>Interrupts</h3>
+
+		<ul>
+			<li class="fragment fade-up">Hardware feature to react to events</li>
+			<ul>
+				<li class="fragment fade-up">Clock interrupts</li>
+				<li class="fragment fade-up">Other interal interrupts: errors, timers, ...</li>
+				<li class="fragment fade-up">External interrupts: peripherals, pins, ...</li>
+			</ul>
+			<li class="fragment fade-up">When interrupt occurs, µC executes an interrupt service routine (ISR)</li>
+			<li class="fragment fade-up">For complete list of possible interrupts => processor datasheet</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Data exchange with ISR</h3>
+		<ul>
+			<li class="fragment fade-up">Shared memory</li>
+			<ul>
+				<li class="fragment fade-up">Global/static variables or same heap location</li>
+				<li class="fragment fade-up">Usually <emph>very efficient</emph></li>
+				<li class="fragment fade-up">Access needs to be carefully managed (<emph>race conditions</emph>)</li>
+				<ul>
+					<li class="fragment fade-up">Locking interrupts</li>
+					<li class="fragment fade-up">Synchronisation primitives (pico_sync)</li>
+				</ul>
+			</ul>
+			<li class="fragment fade-up">Alternative: Pico C/C++ SDK Queue</li>
+		</ul>
+	</section>
+
+	<section data-background-image="images/code.jpg" data-background-opacity="0.2">
+		<h1>Implementation</h1>
+	</section>
+
+	
 </section>
 
-<section>
-	<h3>Building the application</h3>
-	<pre class="C"><code data-trim data-noescape>
-		$ mkdir build 
-		$ cd build 
-		$ cmake .. 
-		$ make 
-	</code></pre>
-</section>
-
-<section>
-	<h3>Going further</h3>
-	<ul>
-		<li>Look at the recommend reading</li>
-		<li><a href="https://raspberrypi.github.io/pico-sdk-doxygen/index.html">https://raspberrypi.github.io/pico-sdk-doxygen/index.html</a></li>
-	</ul>
-</section>
+<section></section>
 
 <!-- END SLIDES -->
 </div>
@@ -285,6 +291,7 @@
 				transition: 'fade', 
 				slideNumber: 'c', 
 				pdfSeparateFragments: false, 
+				navigationMode: 'linear', 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});

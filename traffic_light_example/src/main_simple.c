@@ -1,10 +1,7 @@
 #include "pico/stdlib.h"
 
 typedef enum _state {red_state, yellow_state, green_state} state_t; 
-typedef enum _cmd {go_cmd, stop_cmd, no_cmd} cmd_t; 
-
-static state_t state = red_state;
-static cmd_t cmd;
+typedef enum _event {go_evt, stop_evt, no_evt} evt_t; 
 
 const static uint led_red = 0; 
 const static uint led_yellow = 1; 
@@ -30,19 +27,19 @@ static void app_init(void)
     gpio_set_dir(stop_btn, GPIO_IN); 
 }
 
-static cmd_t get_command(void)
+static evt_t get_event(void)
 {
     if(!gpio_get(go_btn))
     {
-        return go_cmd;
+        return go_evt;
     } 
     else if(!gpio_get(stop_btn))
     {
-        return stop_cmd;
+        return stop_evt;
     } 
     else 
     {
-        return no_cmd;
+        return no_evt;
     }
 }
 
@@ -50,16 +47,19 @@ int main(void)
 {
     app_init();
 
+    static state_t state = red_state;
+    static evt_t evt;
+
     while (true)
     {
-        cmd = get_command();
+        evt = get_event();
 
         switch(state)
         {
             case red_state:
                 gpio_put(led_red, 1);
 
-                if(cmd == go_cmd)
+                if(evt == go_evt)
                 {
                     gpio_put(led_red, 0);
                     state = green_state;
@@ -79,7 +79,7 @@ int main(void)
             case green_state:
                 gpio_put(led_green, 1);
 
-                if(cmd == stop_cmd)
+                if(evt == stop_evt)
                 {
                     gpio_put(led_green, 0);
                     state = yellow_state;

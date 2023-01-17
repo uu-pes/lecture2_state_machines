@@ -1,11 +1,11 @@
 #include "pico/stdlib.h"
 #include "pico/util/queue.h"
-#include "hardware/sync.h"
 
 #define BUTTON_DEBOUNCE_DELAY_MS    50
 #define YELLOW_TIMEOUT_MS           3000
 #define EVENT_QUEUE_LENGTH          10 
 
+typedef enum _state {red_state, yellow_state, green_state} state_t; 
 typedef enum _event {go_evt, stop_evt, timeout_evt, no_evt} evt_t; 
 
 const static uint led_red = 0; 
@@ -17,15 +17,6 @@ const static uint stop_btn = 21;
 
 /* Event queue */
 queue_t evt_queue; 
-
-/* Function pointer primitive */ 
-typedef void (*state_func_t)( void );
-
-typedef struct _state 
-{
-    uint8_t id;
-    state_func_t Enter;
-} state_t;
 
 /* Last button ISR time */
 unsigned long button_time = 0;
@@ -89,68 +80,51 @@ evt_t get_event(void)
     return no_evt; 
 }
 
-void leds_off(void) 
-{
-    gpio_put(led_red, 0); 
-    gpio_put(led_yellow, 0); 
-    gpio_put(led_green, 0); 
-}
-
-void enter_state_red(void)
-{
-    leds_off();
-    gpio_put(led_red, 1);
-}
-
-void enter_state_yellow(void)
-{
-    leds_off();
-    gpio_put(led_yellow, 1);
-    add_alarm_in_ms(YELLOW_TIMEOUT_MS, alarm_callback, NULL, false);
-}
-
-void enter_state_green(void)
-{
-    leds_off();
-    gpio_put(led_green, 1);
-}
-
-const state_t state_red = {
-    0, 
-    enter_state_red
-};
-
-const state_t state_yellow = {
-    1, 
-    enter_state_yellow
-};
-
-const state_t state_green = {
-    2, 
-    enter_state_green
-};
-
-const state_t state_table[3][4] = {
-    /*  STATE       GO              STOP            TIMEOUT         NO-EVT */
-    {/* RED */      state_green,    state_red,      state_red,      state_red},
-    {/* YELLOW */   state_yellow,   state_yellow,   state_red,      state_yellow},    
-    {/* GREEN */    state_green,    state_yellow,   state_green,    state_green}
-};
-
 int main(void)
 {
     app_init();
 
-    state_t current_state = state_red;
     evt_t evt = no_evt;
+    state_t state = red_state; 
 
-    for(;;)
+    while (true)
     {
-        current_state.Enter(); 
-        while(current_state.id == state_table[current_state.id][evt].id)
+        evt = get_event();
+
+        switch(state)
         {
-            evt = get_event();
+            case red_state:
+                gpio_put(led_red, 1);
+
+                if(evt == go_evt)
+                {
+                    gpio_put(led_red, 0);
+                    state = green_state;
+                }
+            break;
+
+            case yellow_state:
+                gpio_put(led_yellow, 1);
+
+                if(evt == timeout_evt)
+                {
+                    gpio_put(led_yellow, 0);
+                    state = red_state;
+                }
+            break;
+
+            case green_state:
+                gpio_put(led_green, 1);
+
+                if(evt == stop_evt)
+                {
+                    gpio_put(led_green, 0);
+                    state = yellow_state;
+
+                    /* Start alarm here */
+                    add_alarm_in_ms(YELLOW_TIMEOUT_MS, alarm_callback, NULL, false); 
+                }
+            break;
         }
-        current_state = state_table[current_state.id][evt];
     }
 }
