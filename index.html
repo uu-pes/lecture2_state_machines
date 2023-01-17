@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Lecture 1</title>
+		<title>Lecture 2</title>
 
 		<link rel="shortcut icon" type="image/x-icon" href="uu_logo/UU_logo_color-cropped.ico">
 
@@ -269,10 +269,55 @@
 		<h1>Implementation</h1>
 	</section>
 
-	
+	<section>
+		<h3>Table driven state machine</h3>
+
+		<ul>
+			<li>Easy way to fully define a state machine</li>
+			<li>Rows: different states</li>
+			<li>Columns: states to go to for a specific event</li>
+		</ul>
+
+		<table style="text-align: center; margin-top: 2rem">
+			<tr>
+				<th><emph>State</emph></th>
+				<th>GO</th>
+				<th>STOP</th>
+				<th>TIMEOUT</th>
+				<th>None</th>
+			</tr>
+			<tr class="">
+				<td class="fragment fade-up" style="text-align: center"><span class="reddot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="greendot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="reddot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="reddot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="reddot"></span></td>
+			</tr>
+			<tr class="">
+				<td class="fragment fade-up" style="text-align: center"><span class="yellowdot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="yellowdot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="yellowdot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="reddot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="yellowdot"></span></td>
+			</tr>
+			<tr class="">
+				<td class="fragment fade-up" style="text-align: center"><span class="greendot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="greendot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="yellowdot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="greendot"></span></td>
+				<td class="fragment fade-up" style="text-align: center"><span class="greendot"></span></td>
+			</tr>
+		</table>
+	</section>
+
+	<section data-background-image="images/code.jpg" data-background-opacity="0.2">
+		<h1>Implementation</h1>
+	</section>
 </section>
 
-<section></section>
+<section>
+	<h1>Thanks for today!</h1>
+</section>
 
 <!-- END SLIDES -->
 </div>

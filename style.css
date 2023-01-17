@@ -146,3 +146,32 @@ background-size: 75% auto;
 ul > ul > li {
     font-size: 2rem; 
 }
+
+.reddot {
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.yellowdot {
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.greendot {
+    height: 25px;
+    width: 25px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* table, th, td {
+    text-align: center; 
+    border: 1px solid white; 
+} */
