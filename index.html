@@ -31,13 +31,12 @@
 	<p>Nikolaus Huber</p>
 </section>
 
-<!-- <section>
+<section>
 	<h3>Outline</h3>
 
 	<ul class="box-list">
 		<li><i class="ti ti-wrecking-ball"></i>Bare-metal vs RTOS</li>
 		<li><i class="ti ti-traffic-lights"></i>State machines</li>
-		<li><i class="ti ti-flask"></i>Lab 1</li>
 	</ul>
 </section>
 
@@ -56,10 +55,10 @@
 		<ul>
 			<li class="fragment fade-up">Multiple, independent execution threads</li>
 			<li class="fragment fade-up">More elaborate data exchange between tasks</li>
-			<li class="fragment fade-up">Usually needs more memory though</li>
+			<li class="fragment fade-up">Usually needs more memory</li>
 		</ul>
 	</div>
-</section> -->
+</section> 
 
 <section data-background-color="white">
 	<img class="r-stretch" src="images/making-embedded-systems.jpg">
@@ -71,6 +70,7 @@
 	</section>
 
 	<section>
+		<h3>State machines</h3>
 		<ul>
 			<li class="fragment fade-up">Standard software design pattern</li>
 			<li class="fragment fade-up" style="list-style-type: none">
@@ -89,7 +89,7 @@
 		<h3>Designing state machines</h3>
 		<ul>
 			<li class="fragment fade-up">First, we must figure out the states of the system</li>
-			<li class="fragment fade-up">What are the state change triggers?</li>
+			<li class="fragment fade-up">What are the <emph>state change triggers?</emph></li>
 			<ul>
 				<li class="fragment fade-up">Synchronous / Asynchronous / Internal / External</li>
 			</ul>
@@ -103,7 +103,7 @@
 </section>
 
 <section>
-	<section data-background-image="images/circuit.jpg" data-background-opacity="0.2">
+	<section data-background-image="images/traffic_light_background.jpg" data-background-opacity="0.2">
 		<h1>Example</h1>
 		<h3>Traffic lights</h3>
 	</section>
@@ -167,7 +167,7 @@
 		<h3>Issues with simple implementation</h3>
 
 		<ul>
-			<li class="fragment highlight-red strike">State behaviour and state transitions are mixed</li>
+			<li class="">State behaviour and state transitions are mixed</li>
 			<li class="fragment highlight-green">get_event function => no debouncing</li>
 			<li class="">Continuous computation, even if there is no update</li>
 		</ul>
@@ -198,7 +198,7 @@
 			<ul>
 				<li class="fragment fade-up">Input signal at pin not clean</li>
 				<li class="fragment fade-up">Initial bounce between LOW and HIGH levels</li>
-				<li class="fragment fade-up">Solution => Debouncing</li>
+				<li class="fragment fade-up">Solution => <emph>Debouncing</emph></li>
 			</ul>	
 		</div>
 	</section>
