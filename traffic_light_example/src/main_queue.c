@@ -21,14 +21,14 @@ queue_t evt_queue;
 /* Last button ISR time */
 unsigned long button_time = 0;
 
-void button_isr(uint gpio, uint32_t events) 
+void button_isr(uint pin, uint32_t events) 
 {
     if ((to_ms_since_boot(get_absolute_time())-button_time) > BUTTON_DEBOUNCE_DELAY_MS) 
     {
         button_time = to_ms_since_boot(get_absolute_time());
         
         evt_t evt;
-        switch(gpio)
+        switch(pin)
         {
             case go_btn: 
                 evt = go_evt; 
@@ -63,7 +63,7 @@ static void app_init(void)
     gpio_set_dir(led_green, GPIO_OUT);
     
     /* Setup buttons */
-    gpio_set_irq_enabled_with_callback(go_btn, GPIO_IRQ_EDGE_FALL, true, &button_isr); 
+    gpio_set_irq_enabled_with_callback(go_btn, GPIO_IRQ_EDGE_FALL, true, button_isr); 
     gpio_set_irq_enabled(stop_btn, GPIO_IRQ_EDGE_FALL, true); 
 
     /* Event queue setup */

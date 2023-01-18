@@ -31,7 +31,7 @@
 	<p>Nikolaus Huber</p>
 </section>
 
-<section>
+<!-- <section>
 	<h3>Outline</h3>
 
 	<ul class="box-list">
@@ -59,7 +59,7 @@
 			<li class="fragment fade-up">Usually needs more memory though</li>
 		</ul>
 	</div>
-</section>
+</section> -->
 
 <section data-background-color="white">
 	<img class="r-stretch" src="images/making-embedded-systems.jpg">
@@ -161,18 +161,19 @@
 	<section data-background-image="images/code.jpg" data-background-opacity="0.2">
 		<h1>Implementation</h1>
 	</section>
-
+</section>
+<section>
 	<section>
 		<h3>Issues with simple implementation</h3>
 
 		<ul>
-			<li>State behaviour and state transitions are mixed</li>
-			<li>Get command function => no debouncing</li>
-			<li>Continuous computation, even if there is no update</li>
+			<li class="fragment highlight-red strike">State behaviour and state transitions are mixed</li>
+			<li class="fragment highlight-green">get_event function => no debouncing</li>
+			<li class="">Continuous computation, even if there is no update</li>
 		</ul>
 	</section>
 
-	<section>
+	<!-- <section>
 		<h3>Hiding transition logic</h3>
 
 		<ul>
@@ -181,7 +182,7 @@
 			<li class="fragment fade-up">Better encapsulation, fewer dependencies</li>
 			<li class="fragment fade-up">Solution => next state function</li>
 		</ul>
-	</section>
+	</section> -->
 
 	<section data-auto-animate>
 		<img class="r-stretch" src="images/button_noise.png">
@@ -240,7 +241,7 @@
 			<li class="fragment fade-up">Hardware feature to react to events</li>
 			<ul>
 				<li class="fragment fade-up">Clock interrupts</li>
-				<li class="fragment fade-up">Other interal interrupts: errors, timers, ...</li>
+				<li class="fragment fade-up">Other internal interrupts: errors, ...</li>
 				<li class="fragment fade-up">External interrupts: peripherals, pins, ...</li>
 			</ul>
 			<li class="fragment fade-up">When interrupt occurs, µC executes an interrupt service routine (ISR)</li>
@@ -268,7 +269,8 @@
 	<section data-background-image="images/code.jpg" data-background-opacity="0.2">
 		<h1>Implementation</h1>
 	</section>
-
+</section>
+<section>
 	<section>
 		<h3>Table driven state machine</h3>
 
