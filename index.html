@@ -28,37 +28,19 @@
 <!-- BEGIN SLIDES -->
 <section data-background-image="images/background.jpg" data-background-opacity="0.4">
 	<h1>Lecture 2</h1>
-	<p>Nikolaus Huber</p>
+	<p>Paul Fiterau</p>
+	<br/>
+	<footer>Based on slides by Nikolaus Huber</footer>
 </section>
 
 <section>
 	<h3>Outline</h3>
 
 	<ul class="box-list">
-		<li><i class="ti ti-wrecking-ball"></i>Bare-metal vs RTOS</li>
 		<li><i class="ti ti-traffic-lights"></i>State machines</li>
+		<li><i class="ti ti-wrecking-ball"></i>Bare-metal vs RTOS</li>
 	</ul>
 </section>
-
-<section>
-	<div class="half-part">
-		<h5>Bare Metal</h5>
-		<ul>
-			<li class="fragment fade-up">Simple applications</li>
-			<li class="fragment fade-up">No specific timing requirements</li>
-			<li class="fragment fade-up">"Single loop applications"</li>
-			<li class="fragment fade-up">(Purely) interrupt-based systems</li>
-		</ul>
-	</div>
-	<div class="half-part">
-		<h5>RTOS</h5>
-		<ul>
-			<li class="fragment fade-up">Multiple, independent execution threads</li>
-			<li class="fragment fade-up">More elaborate data exchange between tasks</li>
-			<li class="fragment fade-up">Usually needs more memory</li>
-		</ul>
-	</div>
-</section> 
 
 <section data-background-color="white">
 	<img class="r-stretch" src="images/making-embedded-systems.jpg" alt="Book cover: Making Embedded Systems by Elecia White">
@@ -72,7 +54,7 @@
 	<section>
 		<h3>State machines</h3>
 		<ul>
-			<li class="fragment fade-up">Standard software design pattern</li>
+			<li class="fragment fade-up">Standard software design pattern (to manage complexity..)</li>
 			<li class="fragment fade-up" style="list-style-type: none">
 				<div class="citation">
 					<div class="cite">[...] allow an object to alter its behaviour when its internal state changes. The object will appear to change its class.</div>
@@ -86,12 +68,17 @@
 	</section>
 
 	<section>
+		<h3>A Basic Vending Machine</h3>
+		<img class="r-stretch" src="images/vending_machine.png"/>
+	</section>
+
+	<section>
 		<h3>Designing state machines</h3>
 		<ul>
 			<li class="fragment fade-up">First, we must figure out the states of the system</li>
-			<li class="fragment fade-up">What are the <emph>state change triggers?</emph></li>
+			<li class="fragment fade-up">What are the <emph>state change triggers? (events)</emph></li>
 			<ul>
-				<li class="fragment fade-up">Synchronous / Asynchronous / Internal / External</li>
+				<li class="fragment fade-up"> Internal / External</li>
 			</ul>
 			<li class="fragment fade-up">What to do with triggers we are not expecting in a particular state?</li>
 			<ul>
@@ -319,6 +306,27 @@
 		<h1>Implementation</h1>
 	</section>
 </section>
+
+
+<section>
+	<div class="half-part">
+		<h5>Bare Metal</h5>
+		<ul>
+			<li class="fragment fade-up">Simple applications</li>
+			<li class="fragment fade-up">No specific timing requirements</li>
+			<li class="fragment fade-up">"Single loop applications"</li>
+		</ul>
+	</div>
+	<div class="half-part">
+		<h5>RTOS</h5>
+		<ul>
+			<li class="fragment fade-up">Multiple, independent execution threads</li>
+			<li class="fragment fade-up">More elaborate data exchange between tasks</li>
+			<li class="fragment fade-up">Usually needs more memory</li>
+		</ul>
+	</div>
+</section> 
+
 
 <section>
 	<h1>Thanks for today!</h1>
